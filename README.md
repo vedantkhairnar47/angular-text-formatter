@@ -1,27 +1,42 @@
-# TextFormatteApp
+📝 Angular Text Formatter App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+An Angular 14 application that allows users to input text, format it, and view results in real time.
+The app demonstrates parent–child communication, Angular bindings, and UI-based text formatting.
 
-## Development server
+🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Two separate text boxes:
 
-## Code scaffolding
+Input Text
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Output Text
 
-## Build
+Real-time text updates
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Text formatting options:
 
-## Running unit tests
+✅ Bold
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+✅ Italic
 
-## Running end-to-end tests
+✅ Underline
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+✅ Font size increase/decrease
 
-## Further help
+✅ Text color using a color palette
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Text utilities:
+
+Clear text
+
+Remove white spaces
+
+Reverse text
+
+Remove special characters
+
+Convert to uppercase / lowercase
+
+Word count & character count
+
+Clean and responsive UI
