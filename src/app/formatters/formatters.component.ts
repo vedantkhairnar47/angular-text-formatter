@@ -29,6 +29,11 @@ export class FormattersComponent implements AfterViewInit {
   @Output() IncCase = new EventEmitter<void>();
   @Output() LowCase = new EventEmitter<void>();
 @Output() colorSelected = new EventEmitter<string>();
+@Output() removeStyle = new EventEmitter<void>();
+
+removeStyling() {
+  this.removeStyle.emit();
+}
 
 
 
@@ -83,11 +88,7 @@ selectColor(color: string) {
   const cleaned = this.incomingText.replace(/[^a-zA-Z0-9 ]/g, '');
   this.sendToFirst.emit(cleaned);
 }
-removeStyling() {
-  const cleaned = this.incomingText.replace(/<[^>]*>/g, '');
-  this.sendToFirst.emit(cleaned);
 
-}
 capitalizeAllLetter() {
  const result = this.incomingText.toUpperCase();
   this.sendToFirst.emit(result);
