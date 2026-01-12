@@ -1,3 +1,4 @@
+
 📝 Angular Text Formatter App
 
 An Angular 14 application that allows users to input text, format it, and view results in real time.
@@ -40,3 +41,7 @@ Convert to uppercase / lowercase
 Word count & character count
 
 Clean and responsive UI
+
+
+<img width="1892" height="905" alt="Screenshot 2026-01-12 144158" src="https://github.com/user-attachments/assets/35ddb743-9da2-4181-acac-1cf4da1c0904" />
+
