@@ -24,6 +24,13 @@ export class HomeComponent implements OnInit {
   toggleUnderLine() {
     this.isUnderLine = !this.isUnderLine;  
   }
+removeAllStyling() {
+  this.isBold = false;
+  this.isItalic = false;
+  this.isUnderLine = false;
+  this.TextColor = '#000000';
+  this.SizeFont = 15;
+}
 
   toggleItalic() {
     this.isItalic = !this.isItalic;   
