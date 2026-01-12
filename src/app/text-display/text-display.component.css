@@ -1,0 +1,55 @@
+/* Whole left container */
+:host {
+  display: block;
+  background: #d9d9d9;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #c5c5c5;
+}
+
+/* Each separate text box */
+.text-box {
+  background: #ffffff;
+  border: 1px solid #bcbcbc;
+  margin-bottom: 20px;
+  overflow: hidden; 
+}
+
+/* Title bar */
+.box-title {
+  background: #e6e6e6;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+/* Input field */
+.text-box input {
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  padding-top: 28px;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  background: #ffffff;
+  display: block; 
+}
+
+/* Formatting */
+.boldText {
+  font-weight: bold;
+}
+.underlineText {
+  text-decoration: underline;
+}
+.italicText {
+  font-style: italic;
+}
+
+/* Focus effect (no size change) */
+.text-box:focus-within {
+  border-color: #888;
+}

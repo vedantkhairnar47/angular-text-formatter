@@ -1,0 +1,19 @@
+<div class="text-box">
+  <div class="box-title">Input Text</div>
+  <input
+    type="text"
+    [(ngModel)]="textValue"
+    (input)="onTextChange()">
+</div>
+
+<div class="text-box">
+  <div class="box-title">Output Text</div>
+  <input
+    type="text"
+    [(ngModel)]="textValue1"
+    [class.boldText]="isBold"
+    [class.underlineText]="isUnderLine"
+    [class.italicText]="isItalic"
+    [style.fontSize.px]="SizeFont"
+    [style.color]="TextColor">
+</div>

@@ -1,0 +1,27 @@
+<h1>Text Formatted</h1>
+
+
+
+<app-text-display
+  (textChanged)="sharedText = $event"
+   [isBold]="isBold"
+   [isUnderLine]="isUnderLine"
+   [isItalic]="isItalic"
+   [SizeFont]="SizeFont"
+   [TextColor]="TextColor"
+  [textValue1]="sharedText1">
+</app-text-display>
+
+
+<app-formatters
+  [incomingText]="sharedText"
+  (boldAll)="toggleBold()"
+  (UnderLine)="toggleUnderLine()"
+  (Italic)="toggleItalic()"
+  (IncCase)="UpperCaseInc()"
+  (LowCase)="LowerCaseDec()"
+  (sendToFirst)="sharedText1 = $event"
+  (colorSelected)="setColor($event)">
+</app-formatters>
+
+

@@ -1,0 +1,37 @@
+<div class="right-panel">
+<div class="stats-box">
+  <p>Word Count: {{wordCount}}</p>
+  <p>Character Count: {{charCount}}</p>
+</div>
+
+<!-- Div 2: six buttons -->
+<div class="buttons-box">
+  
+
+  <button (click)="ClearValue()">Clear ALL</button>
+  <button (click)="removeAllSpaces()">White Space Remover</button>
+  <button (click)="reverseText()">Reverse ALL</button>
+  <button (click)="removeSpecialCharacters()">Remove Special Char</button>
+  <button (click)="removeStyling()">Remove Styling</button>
+  <button (click)="capitalizeAllLetter()">Capitalize</button>
+
+  
+
+</div>
+      <div class="icon-row">
+        <button (click)="makeBold()">B</button>
+        <button (click)="makeItalic()">I</button>
+        <button (click)="makeUnderLine()">U</button>
+        <button (click)="openColorPicker()">🎨</button>
+        <button (click)="makeUpperCase()">+</button>
+        <button (click)="makeLowerCase()">-</button>
+      </div>
+      
+<input
+  type="color"
+  #colorPicker
+  (input)="onColorChange($event)"
+  style="display:none">
+
+
+</div>
