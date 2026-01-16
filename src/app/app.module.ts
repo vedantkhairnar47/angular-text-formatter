@@ -15,11 +15,12 @@ import { FormsModule } from '@angular/forms';
     TextDisplayComponent,
     FormattersComponent
   ],
-  imports: [
+  imports: [  
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
+  // services
   providers: [],
   bootstrap: [AppComponent]
 })
