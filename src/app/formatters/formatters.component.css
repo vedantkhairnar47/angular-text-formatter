@@ -1,97 +1,73 @@
-/* Right panel container */
+/* Host takes full height */
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* Right panel main container */
 .right-panel {
-  width: 100%;
-  background: #d9d9d9;
-  padding: 15px;
-  box-sizing: border-box;
-  border: 1px solid #c5c5c5;
-}
-
-/* Word + character count box */
-.stats-box {
-  background: #6f6f6f;
-  color: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  font-size: 15px;
-  border-radius: 4px;
-}
-
-/* Button group container */
-.buttons-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: #cfcfcf;
+  padding: 15px;
+  border: 1px solid #c5c5c5;
+  box-sizing: border-box;
+}
+
+/* ===== TOP: Stats box ===== */
+.stats-box {
+  background: #7a7a7a;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* ===== MIDDLE: Buttons grid (GROWS) ===== */
+.buttons-box {
+  flex: 1;                    /* 🔑 KEY LINE */
+  background: #bdbdbd;
   padding: 12px;
   display: grid;
-  grid-template-columns: 1fr 1fr;   /* 2 buttons per row */
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
-  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow-y: auto;           /* optional scroll */
 }
 
-/* Buttons style */
+/* Buttons */
 .buttons-box button {
-  padding: 8px 5px;
+  padding: 8px;
   border: none;
-  background: #ffffff;
-  cursor: pointer;
+  background: #e6e6e6;
   font-size: 13px;
-  border-radius: 3px;
-  transition: 0.2s;
-}
-
-/* Hover effect */
-.buttons-box button:hover {
-  background: #e4e4e4;
-}
-.color-palette {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  justify-content: center;
-}
-
-.color {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
   cursor: pointer;
-  border: 1px solid #444;
 }
 
-.red { background: red; }
-.blue { background: blue; }
-.green { background: green; }
-.orange { background: orange; }
-.purple { background: purple; }
-.black { background: black; }
+.buttons-box button:hover {
+  background: #d6d6d6;
+}
 
-/* Icon button row */
+/* ===== BOTTOM: Icon row ===== */
 .icon-row {
-  margin-top: 12px;
-  background: #cfcfcf;
+  background: #bdbdbd;
   padding: 10px;
   display: flex;
-  gap: 8px;
-  border-radius: 4px;
-
   justify-content: center;
-  align-items: center;  
+  gap: 10px;
 }
 
 /* Icon buttons */
 .icon-row button {
   width: 32px;
   height: 32px;
-  background: white;
+  background: #ffffff;
   border: none;
-  font-weight: 700;
+  font-weight: bold;
   cursor: pointer;
-  border-radius: 3px;
-  
-
-
 }
 
-/* Hover for icon buttons */
 .icon-row button:hover {
   background: #e4e4e4;
 }

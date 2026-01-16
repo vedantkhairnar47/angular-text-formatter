@@ -1,55 +1,65 @@
-/* Whole left container */
+/* Left panel container */
 :host {
-  display: block;
-  background: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ededed;
   padding: 15px;
-  box-sizing: border-box;
   border: 1px solid #c5c5c5;
+  box-sizing: border-box;
 }
 
-/* Each separate text box */
+/* Individual text box */
 .text-box {
+  flex: 1;                       /* KEY */
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border: 1px solid #bcbcbc;
-  margin-bottom: 20px;
-  overflow: hidden; 
+  margin-bottom: 15px;
 }
 
-/* Title bar */
+.text-box:last-child {
+  margin-bottom: 0;
+}
+
+/* Box title */
 .box-title {
-  background: #e6e6e6;
+  background: #ffffff;
   padding: 8px 12px;
   font-size: 13px;
   font-weight: 600;
-  border-bottom: 1px solid #bcbcbc;
+  border-bottom: 1px solid #ffffff;
 }
 
-/* Input field */
-.text-box input {
+/* Input styling */
+.text-box input,
+.text-box textarea {
+  flex: 1;                       /* KEY */
   width: 100%;
-  height: 80px;
   padding: 12px;
-  padding-top: 28px;
   font-size: 15px;
   border: none;
   outline: none;
   box-sizing: border-box;
   background: #ffffff;
-  display: block; 
+  resize: none;
 }
 
-/* Formatting */
+/* Text formatting classes */
 .boldText {
   font-weight: bold;
 }
-.underlineText {
-  text-decoration: underline;
-}
+
 .italicText {
   font-style: italic;
 }
 
-/* Focus effect (no size change) */
+.underlineText {
+  text-decoration: underline;
+}
+
+/* Focus effect */
 .text-box:focus-within {
   border-color: #888;
 }

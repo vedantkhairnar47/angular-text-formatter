@@ -51,9 +51,9 @@ onColorChange(event: Event) {
   const input = event.target as HTMLInputElement;
   this.colorSelected.emit(input.value);
 }
-selectColor(color: string) {
-  this.colorSelected.emit(color);
-}
+// selectColor(color: string) {
+//   this.colorSelected.emit(color);
+// }
 
   makeBold() {
     this.boldAll.emit();  

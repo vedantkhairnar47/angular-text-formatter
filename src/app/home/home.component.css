@@ -1,0 +1,24 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* FULL SCREEN */
+}
+
+/* Header */
+.header {
+  background: #e6e6e6;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #bcbcbc;
+}
+
+/* Main layout below header */
+.main-layout {
+  flex: 1; /* TAKE REMAINING HEIGHT */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+}
