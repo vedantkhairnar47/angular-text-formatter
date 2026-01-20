@@ -1,19 +1,16 @@
 <div class="text-box">
-  <div class="box-title">Type Text :-</div>
-  <input
-    type="text"
-    [(ngModel)]="textValue"
-    (input)="onTextChange()">
+  <div class="box-title">Type Text</div>
+  <textarea [(ngModel)]="state.value"></textarea>
 </div>
 
 <div class="text-box">
-  <div class="box-title">Output Text :-</div>
-  <input
-    type="text"
-    [(ngModel)]="textValue1"
-    [class.boldText]="isBold"
-    [class.underlineText]="isUnderLine"
-    [class.italicText]="isItalic"
-    [style.fontSize.px]="SizeFont"
-    [style.color]="TextColor">
+  <div class="box-title">Output Text</div>
+  <textarea
+    [value]="state.value"
+    [class.boldText]="state.isBold"
+    [class.italicText]="state.isItalic"
+    [class.underlineText]="state.isUnderline"
+    [style.fontSize.px]="state.fontSize"
+    [style.color]="state.color">
+  </textarea>
 </div>
