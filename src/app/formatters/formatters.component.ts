@@ -1,96 +1,107 @@
-import { Component,Input,Output,ViewChild,EventEmitter , ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
+
+import { TextState } from '../models/text-state.model';
 
 @Component({
   selector: 'app-formatters',
   templateUrl: './formatters.component.html',
   styleUrls: ['./formatters.component.css']
 })
-export class FormattersComponent implements AfterViewInit {
+export class FormattersComponent implements OnChanges {
+
   @Input() incomingText: string = '';
+  @Output() sendToFirst = new EventEmitter<TextState>();
 
-  textValue: string = '';
+  textState = new TextState();
 
-  get charCount(): number {
-    return this.incomingText.length;
-  }
+  @ViewChild('colorPicker') colorPicker!: ElementRef<HTMLInputElement>;
 
-  get wordCount(): number {
-    if (!this.incomingText.trim()) {
-      return 0;
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['incomingText']) {
+      this.textState.set(this.incomingText);
     }
-    return this.incomingText.trim().split(/\s+/).length;
   }
 
-  @Output() sendToFirst = new EventEmitter<string>();
+  emit() {
+    this.sendToFirst.emit(this.textState);
+  }
 
-  @Output() boldAll = new EventEmitter<void>();
-  @Output() UnderLine = new EventEmitter<void>();
-  @Output() Italic = new EventEmitter<void>();
-  @Output() IncCase = new EventEmitter<void>();
-  @Output() LowCase = new EventEmitter<void>();
-@Output() colorSelected = new EventEmitter<string>();
-@Output() removeStyle = new EventEmitter<void>();
+  clear() {
+    this.textState.clear();
+    this.emit();
+  }
 
-removeStyling() {
-  this.removeStyle.emit();
-}
+  reverse() {
+    this.textState.reverse();
+    this.emit();
+  }
 
+  removeSpaces() {
+    this.textState.removeSpaces();
+    this.emit();
+  }
 
+  removeSpecialChars() {
+    this.textState.removeSpecialChars();
+    this.emit();
+  }
 
-@ViewChild('colorPicker', { static: false })
-colorPicker!: ElementRef<HTMLInputElement>;
-ngAfterViewInit(): void {
-  // view is ready
-}
+  toUpper() {
+    this.textState.toUpper();
+    this.emit();
+  }
+
+  toLower() {
+    this.textState.toLower();
+    this.emit();
+  }
+
+  bold() {
+    this.textState.toggleBold();
+    this.emit();
+  }
+
+  italic() {
+    this.textState.toggleItalic();
+    this.emit();
+  }
+
+  underline() {
+    this.textState.toggleUnderline();
+    this.emit();
+  }
+
+  removeStyling() {
+    this.textState.removeStyling();
+    this.emit();
+  }
+
   openColorPicker() {
-    if (this.colorPicker) {
-      this.colorPicker.nativeElement.click();
-    }
+    this.colorPicker.nativeElement.click();
   }
-onColorChange(event: Event) {
-  const input = event.target as HTMLInputElement;
-  this.colorSelected.emit(input.value);
-}
-// selectColor(color: string) {
-//   this.colorSelected.emit(color);
-// }
 
-  makeBold() {
-    this.boldAll.emit();  
+  changeColor(event: Event) {
+    const color = (event.target as HTMLInputElement).value;
+    this.textState.setColor(color);
+    this.emit();
   }
-   makeUnderLine() {
-    this.UnderLine.emit();  
-  }
-    makeItalic() {
-    this.Italic.emit();  
-  }
-  makeUpperCase() {
-    this.IncCase.emit();  
-  }
-   makeLowerCase() {
-    this.LowCase.emit();  
-  }
- 
-  ClearValue() {
-    this.sendToFirst.emit("");
-  }
-  removeAllSpaces() {
-    const cleaned = this.incomingText.replace(/\s+/g, '');
-  this.sendToFirst.emit(cleaned);
-  }
-  reverseText() {
-  const reversed = this.incomingText.split('').reverse().join('');
-  this.sendToFirst.emit(reversed);
-
-  
-}
-  removeSpecialCharacters() {
-  const cleaned = this.incomingText.replace(/[^a-zA-Z0-9 ]/g, '');
-  this.sendToFirst.emit(cleaned);
+  increaseFont() {
+  this.textState.increaseFont();
+  this.emit();
 }
 
-capitalizeAllLetter() {
- const result = this.incomingText.toUpperCase();
-  this.sendToFirst.emit(result);
+decreaseFont() {
+  this.textState.decreaseFont();
+  this.emit();
 }
+
 }

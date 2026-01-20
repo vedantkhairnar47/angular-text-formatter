@@ -1,34 +1,32 @@
 <div class="right-panel">
+<div class="stats-box">
+  <p>Word Count: {{ textState.wordCount }}</p>
+  <p>Char Count: {{ textState.charCount }}</p>
+</div>
 
-  <!-- Stats -->
-  <div class="stats-box">
-    <p><strong>Word Count:</strong> {{ wordCount }} Words</p>
-    <p><strong>Char Count:</strong> {{ charCount }} Chars</p>
-  </div>
+<div class="buttons-box">
+  <button (click)="clear()">Clear All</button>
+  <button (click)="removeSpaces()">Remove Spaces</button>
+  <button (click)="reverse()">Reverse</button>
+  <button (click)="removeSpecialChars()">Remove Special</button>
+  <button (click)="removeStyling()">Remove Styling</button>
+  <button (click)="toUpper()">Uppercase</button>
+</div>
 
-  <!-- Action buttons -->
-  <div class="buttons-box">
-    <button (click)="ClearValue()">Clear All</button>
-    <button (click)="removeAllSpaces()">White-space Remove</button>
-    <button (click)="reverseText()">Reverse All</button>
-    <button (click)="removeSpecialCharacters()">Remove Special Char</button>
-    <button (click)="removeStyling()">Remove Styling</button>
-    <button (click)="capitalizeAllLetter()">Capitalize Word</button>
-  </div>
+<div class="icon-row">
+  <button (click)="bold()">B</button>
+  <button (click)="italic()">I</button>
+  <button (click)="underline()">U</button>
+  <button (click)="openColorPicker()">🎨</button>
+  <button (click)="increaseFont()">+</button>
+<button (click)="decreaseFont()">-</button>
 
-  <!-- Styling icons -->
-  <div class="icon-row">
-    <button (click)="makeBold()">B</button>
-    <button (click)="makeItalic()">I</button>
-    <button (click)="makeUnderLine()">U</button>
-    <button (click)="openColorPicker()">🎨</button>
-    <button (click)="makeUpperCase()">+</button>
-    <button (click)="makeLowerCase()">-</button>
-  </div>
+</div>
 
-  <input
-    type="color"
-    #colorPicker
-    (input)="onColorChange($event)"
-    style="display:none">
+<input
+  type="color"
+  #colorPicker
+  hidden
+  (input)="changeColor($event)"
+>
 </div>
