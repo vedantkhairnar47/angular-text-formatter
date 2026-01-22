@@ -1,0 +1,132 @@
+/* Main container */
+.api-container {
+  background: #e0e0e0;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top row */
+.top-row {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.user-id {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-id input {
+  width: 180px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.error-box {
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Main content */
+.content-row {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+}
+
+/* Left panel */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button-group button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button-group button:hover {
+  background: #f0f0f0;
+}
+
+/* CRUD buttons */
+.crud-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.crud-buttons .primary {
+  background: #6b6b6b;
+  color: #fff;
+}
+
+.crud-buttons .secondary {
+  background: #7a7a7a;
+  color: #fff;
+}
+
+.crud-buttons .danger {
+  background: #8b7b7b;
+  color: #fff;
+}
+
+.crud-buttons button {
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Input body */
+.input-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-body input {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Right panel */
+.right-panel {
+  background: #fff3f3;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-panel h4 {
+  margin: 0 0 10px 0;
+}
+
+.response-box {
+  flex: 1;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+:host {
+  display: block;
+  height: 100%;
+}
