@@ -1,0 +1,55 @@
+<div class="api-container">
+
+  <!-- Top row -->
+  <div class="top-row">
+    <div class="user-id">
+      <label>User Id :-</label>
+      <input type="text" placeholder="Enter user id"
+      [(ngModel)]="userId">
+    </div>
+
+    <div class="error-box">
+      <span>Error Msg</span>
+       {{ errorMsg }}
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content-row">
+
+    <!-- Left panel -->
+    <div class="left-panel">
+
+      <div class="button-group">
+        <button (click)="loadComments()">Comments</button>
+        <button (click)="loadAlbums()">Albums</button>
+        <button (click)="loadPhotos()">Photos</button>
+        <button (click)="loadTodos()">Todos</button>
+
+      </div>
+
+      <div class="crud-buttons">
+        <button class="primary" (click)="createPost()">Create</button>
+        <button class="secondary" (click)="updatePost()">Update</button>
+        <button class="danger" (click)="deletePost()">Delete</button>
+      </div>
+
+      <div class="input-body">
+        <label>Input Body :-</label>
+        <input type="text" placeholder="Enter request body"
+         [(ngModel)]="requestBody.body">
+      </div>
+
+    </div>
+
+    <!-- Right panel -->
+    <div class="right-panel">
+      <h4>Response Data</h4>
+
+      <div class="response-box"></div>
+      <pre>{{ responseData | json }}</pre>
+    </div>
+
+  </div>
+
+</div>

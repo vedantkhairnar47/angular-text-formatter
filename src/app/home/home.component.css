@@ -7,8 +7,8 @@
 /* Header */
 .header {
   background: #e6e6e6;
-  padding: 10px 15px;
-  font-size: 18px;
+  padding: 2px 22px;
+  font-size: 10px;
   font-weight: bold;
   border-bottom: 1px solid #bcbcbc;
 }
@@ -22,3 +22,4 @@
   padding: 15px;
   box-sizing: border-box;
 }
+
